@@ -1,0 +1,62 @@
+@use "../abstracts/" as *;
+
+aside{
+    flex-basis: 20%;
+    height: calc(100vh - 4.375rem);
+    @include position(relative);
+}
+
+.side-nav{
+    margin-top: 1rem;
+    padding-right: 0.6rem;
+    &-item{
+        padding: .4rem 1rem;
+        &:hover{
+            background-color: color("bg-shade");
+        }
+
+        &.active{
+            background-color: color("bg-shade" );
+            color: color("gray-800");
+        }
+    }
+}
+
+
+.square-icon{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 3px;
+    border: solid 3px;
+    margin-right: 0.4rem;
+
+    @each $name, $val in $square-colors{
+        &-#{$name}{
+            border-color: $val;
+        }
+    }
+}
+
+
+.btn-icon-wrap{
+    width: 100%;
+    height: 50px;
+    @include position(absolute, $bottom: 0, $left: 0);
+    background-color: color("gray-200");
+    @include flex($justify-content: space-evenly, $align-items: center);
+}
+
+
+.btn{
+    width: 200px;
+    border: none;
+    padding: 0.4rem 1rem;
+    background-color: color("blue-color");
+    color: white;
+    letter-spacing: 1px;
+    &:hover{
+        transform: scale(.98);
+    }
+}
+

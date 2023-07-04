@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/4a8b36647d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <title>mail</title>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <a class="logo"><span class="logo-icon"></span>mail</a>
+            <h3 class="header-title"><a href="javascrip:void(0)">Sparrow (2)</a></h3>
+            <div class="search-bar">
+                <input type="text" class="search-bar-input">
+                <span class="search-bar-icon"><i class="fa-sharp fa-solid fa-magnifying-glass"></i></span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <div class="container main-container">
+                <aside>
+                    <button class="btn">compose</button>
+                    <ul class="side-nav side-nav-main">
+                        <li class="side-nav-item active"><a><span><i class="fa-solid fa-inbox side-nav-icon"></i></span> Inbox (2)</a></li>
+                        <li class="side-nav-item"><a><span><i class="fa-sharp fa-solid fa-paper-plane side-nav-icon"></i></span> Sent Mail</a></li>
+                        <li class="side-nav-item"><a><span><i class="fa-regular fa-star side-nav-icon"></i></span> Starred</a></li>
+                        <li class="side-nav-item"><a><span><i class="fa-solid fa-notes-medical side-nav-icon"></i></span> Draft</a></li>
+                        <li class="side-nav-item"><a><span><i class="fa-solid fa-trash side-nav-icon"></i></span> Trash (2)</a></li>
+                    </ul>
+    
+                    <ul class="side-nav side-nav-split">
+                        <li class="side-nav-item"><a><span class="square-icon square-icon-voilet"></span> Personal (2)</a></li>
+                        <li class="side-nav-item"><a><span class="square-icon square-icon-orange"></span> Clients</a></li>
+                        <li class="side-nav-item"><a><span class="square-icon square-icon-green"></span> Family (2)</a></li>
+                        <li class="side-nav-item"><a><span class="square-icon square-icon-blue"></span> Friends</a></li>
+                        <li class="side-nav-item"><a><span class="square-icon square-icon-brown"></span> Archives</a></li>
+                    </ul>
+    
+                    <div class="btn-icon-wrap">
+                        <a href="#" class="setting btn-icon"><i class="fa-solid fa-gear user-icon"></i></a>
+                        <a href="#" class="profile btn-icon"><i class="fa-solid fa-user user-icon"></i></a>
+                    </div>
+                </aside>
+    
+                <div class="sideNav-container">
+                    <ul class="mail-list" id="mail-list"></ul>
+                    <div class="mail-view" id="mail-view"></div>
+                </div>
+
+                <div class="user">
+                    <div class="user-setting hidden">
+                        <div class="user-heading">Settings</div>
+                        <form autocomplete="off">
+                            <div class="input-control">
+                                <label for="name" class="user-info">User Name</label>
+                                <input type="text" id="name" value="Dinakaran">
+                                <small class="error error-name"></small>
+                            </div>
+                            <div class="input-control">
+                                <label for="email" class="user-info">Email</label>
+                                <input type="text" id="email" value="dinakaran@gmail.com">
+                                <small class="error error-email"></small>
+                            </div>
+    
+                            <div class="input-control">
+                                <label for="password" class="user-info">Change password</label>
+                                <input type="password" id="password" value="Password@1">
+                                <small class="error error-password"></small>
+                            </div>
+    
+                            <button type="submit" class="user-setting-btn">Update</button>
+                        </form>
+                    </div>
+                    
+                    <div class="user-profile hidden">
+                            <div class="user-heading">Profile</div>
+                            <div class="user-profile-detail">
+                                <span class="user-info">Name</span> 
+                                <span class="view-name read-only">Dinakaran R</span>
+                            </div>
+                            <div class="user-profile-detail">
+                                <span class="user-info">Email</span>
+                                <span class="view-email read-only">dinakaran@gmail.com</span>
+                            </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <script src="js/data.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>

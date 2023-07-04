@@ -1,0 +1,13 @@
+@use "../abstracts/" as *;
+
+%title{
+    font-size: font-size("fs-600");
+    font-weight: 400;
+    color: color("gray-800");
+}
+
+%sub-title {
+    font-size: font-size("fs-300");
+    font-weight: 300;
+    margin-top: 0.7rem;
+}

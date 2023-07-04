@@ -1,0 +1,209 @@
+@use "../abstracts/" as *;
+@use "../components/" as *;
+
+body{
+    height: 100vh;
+    font-family: 'Open Sans', sans-serif;
+    color: color("gray-600");
+    background-color: color("primary-bg");
+    overflow: hidden;
+}
+
+.container{
+    width: min(100% - 2rem, 80rem);
+    margin-inline: auto;
+}
+
+.main-container{
+    display: flex;
+}
+
+.sideNav-container{
+    flex-basis: 80%;
+    display: flex;
+}
+
+.hidden{
+    display: none;
+}
+
+// Mail list  
+
+.mail-list{
+    flex-basis: 30%;
+    @extend %scroll;
+
+    &-item{
+        @include flex($justify-content: space-between);
+        padding: 1rem;
+        border-left: 3px solid transparent;
+        border-bottom: 1px solid color("border-shade");
+        cursor: pointer;
+        &:hover{
+            background-color: color("gray-100");
+        }
+    }
+
+    &-info{
+        @include flex($align-items: flex-end, $direction:column);
+        gap: 1rem;
+    }
+
+    &-title{
+        @extend %title;
+    }
+
+    &-desc{
+        @extend %sub-title ;
+    }
+}
+
+.mail-list-item.active{
+    background-color: color("gray-100");
+    border-left-color: color("blue-color");
+}
+
+// Mail View 
+
+.mail-view{
+    flex-basis: 70%;
+    padding: 1rem 2rem;
+    @extend %scroll;
+}
+
+.mail-subject{
+    display: flex;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid #ededed;
+    &-title{
+        @extend %title;
+    }
+
+    &-desc{
+        @extend %sub-title;
+    }
+}
+
+.user-img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+.user-name{
+    border: 1px solid color("border-shade");
+    border-radius: 10px;
+    padding-inline: 0.6rem;
+    cursor: pointer;
+
+    &-icon{
+        margin-left: 4px;
+        vertical-align: -1px;
+    }
+}
+
+.mail-content{
+    line-height: 1.71;
+    padding-block: 1rem;
+}
+
+
+.mail-view-icon{
+    margin-left: auto;
+    cursor: pointer;
+    @include flex($align-items:center);
+    & > *{
+        padding: 0.4rem 1rem;
+        border: 1px solid color("border-shade");
+
+    &:first-child{
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+    }
+
+    &:last-child{
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+
+    &:hover{
+        background-color: color("blue-color");
+        color: color("light-color");
+    }
+
+    }
+}
+
+
+// settings
+
+.user{
+    &-setting{
+        width: 520px;
+        margin-left: 2rem;
+
+        &-btn{
+            margin-top: 2rem;
+            padding: 0.3rem 2rem;
+            background-color: color("blue-color");
+            border-radius: 4px;
+            letter-spacing: 1px;
+            color: color("light-color");
+            &:active{
+                transform: scale(.96);
+            }
+        }
+    }
+
+    &-profile{
+        width: 460px;
+    }
+    
+    &-info{
+        color: color("gray-800");
+    }
+    
+    
+    &-heading{
+        font-size: 2rem;
+        color: color("blue-color");
+    }
+    
+}
+
+.input-control{
+    @include flex($justify-content: space-between);
+    margin-top: 2rem;
+    position: relative;
+    & > input {
+        width: 350px;
+        padding: 0.3rem 1rem;
+        border:  1px solid color("border-shade");
+    }
+
+    .error{
+        font-size: 10px;
+        color: #ff0000;
+        position: absolute;
+        left: 33%;
+        bottom: -24px;
+    }
+}
+
+
+.user-profile{
+    margin-left: 2rem;
+    &-heading{
+        font-size: 2rem;
+        color: color("blue-color");
+    }
+    &-detail{
+        margin-top: 2rem;
+    }
+
+    .read-only{
+        margin-left: 1rem;
+    }
+}
+

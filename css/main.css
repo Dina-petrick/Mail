@@ -1,0 +1,346 @@
+*, ::after, ::before {
+  box-sizing: border-box;
+  font: inherit;
+}
+
+article, details, figcaption, figure, footer, main, menu, nav, img, section {
+  display: block;
+}
+
+a, article, b, blockquote, body, center, cite, code, details, div, fieldset,
+figcaption, figure, footer, form, h1, h2, h3, h4, header, html, i, iframe,
+img, label, li, main, menu, nav, object, ol, p, s, section, span, strong, sub,
+table, tbody, td, th, thead, time, tr, tt, ul, var, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+
+body {
+  line-height: 1.5;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  outline: none;
+  color: inherit;
+  background-color: transparent;
+}
+
+img {
+  max-width: 100%;
+}
+
+input {
+  background-color: none;
+}
+
+header {
+  padding-block: 1rem 1.5rem;
+}
+header .header-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 1.125rem;
+}
+.logo-icon {
+  width: 15px;
+  height: 20px;
+  display: inline-block;
+  background-color: #000000;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  vertical-align: -2px;
+}
+
+.search-bar {
+  position: relative;
+}
+.search-bar-input {
+  height: 30px;
+  padding-left: 2rem;
+  padding-right: 1rem;
+  border-radius: 20px;
+  border: 0.4px solid rgba(31, 34, 46, 0.5019607843);
+}
+.search-bar-input:focus {
+  outline: 1px solid rgba(31, 34, 46, 0.5019607843);
+  outline-offset: 4px;
+}
+.search-bar-icon {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+}
+
+aside {
+  flex-basis: 20%;
+  height: calc(100vh - 4.375rem);
+  position: relative;
+}
+
+.side-nav {
+  margin-top: 1rem;
+  padding-right: 0.6rem;
+}
+.side-nav-item {
+  padding: 0.4rem 1rem;
+}
+.side-nav-item:hover {
+  background-color: rgba(142, 142, 147, 0.1882352941);
+}
+.side-nav-item.active {
+  background-color: rgba(142, 142, 147, 0.1882352941);
+  color: #4c4f59;
+}
+
+.square-icon {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  border: solid 3px;
+  margin-right: 0.4rem;
+}
+.square-icon-voilet {
+  border-color: #9200ff;
+}
+.square-icon-orange {
+  border-color: #ff7100;
+}
+.square-icon-green {
+  border-color: #d0db00;
+}
+.square-icon-blue {
+  border-color: #00dcff;
+}
+.square-icon-brown {
+  border-color: #6f6e74;
+}
+
+.btn-icon-wrap {
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.btn {
+  width: 200px;
+  border: none;
+  padding: 0.4rem 1rem;
+  background-color: #007aff;
+  color: white;
+  letter-spacing: 1px;
+}
+.btn:hover {
+  transform: scale(0.98);
+}
+
+.mail-list-title, .mail-subject-title {
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: #4c4f59;
+}
+
+.mail-list-desc, .mail-subject-desc {
+  font-size: 0.75rem;
+  font-weight: 300;
+  margin-top: 0.7rem;
+}
+
+.mail-list, .mail-view {
+  height: calc(100vh - 4.375rem);
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+.mail-list::-webkit-scrollbar, .mail-view::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  height: 100vh;
+  font-family: "Open Sans", sans-serif;
+  color: #8e8e93;
+  background-color: rgba(255, 255, 255, 0.8);
+  overflow: hidden;
+}
+
+.container {
+  width: min(100% - 2rem, 80rem);
+  margin-inline: auto;
+}
+
+.main-container {
+  display: flex;
+}
+
+.sideNav-container {
+  flex-basis: 80%;
+  display: flex;
+}
+
+.hidden {
+  display: none;
+}
+
+.mail-list {
+  flex-basis: 30%;
+}
+.mail-list-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  border-left: 3px solid transparent;
+  border-bottom: 1px solid #ededed;
+  cursor: pointer;
+}
+.mail-list-item:hover {
+  background-color: rgba(142, 142, 147, 0.0509803922);
+}
+.mail-list-info {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  gap: 1rem;
+}
+.mail-list-item.active {
+  background-color: rgba(142, 142, 147, 0.0509803922);
+  border-left-color: #007aff;
+}
+
+.mail-view {
+  flex-basis: 70%;
+  padding: 1rem 2rem;
+}
+
+.mail-subject {
+  display: flex;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid #ededed;
+}
+.user-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.user-name {
+  border: 1px solid #ededed;
+  border-radius: 10px;
+  padding-inline: 0.6rem;
+  cursor: pointer;
+}
+.user-name-icon {
+  margin-left: 4px;
+  vertical-align: -1px;
+}
+
+.mail-content {
+  line-height: 1.71;
+  padding-block: 1rem;
+}
+
+.mail-view-icon {
+  margin-left: auto;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.mail-view-icon > * {
+  padding: 0.4rem 1rem;
+  border: 1px solid #ededed;
+}
+.mail-view-icon > *:first-child {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+.mail-view-icon > *:last-child {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.mail-view-icon > *:hover {
+  background-color: #007aff;
+  color: #ffffff;
+}
+
+.user-setting {
+  width: 520px;
+  margin-left: 2rem;
+}
+.user-setting-btn {
+  margin-top: 2rem;
+  padding: 0.3rem 2rem;
+  background-color: #007aff;
+  border-radius: 4px;
+  letter-spacing: 1px;
+  color: #ffffff;
+}
+.user-setting-btn:active {
+  transform: scale(0.96);
+}
+.user-profile {
+  width: 460px;
+}
+.user-info {
+  color: #4c4f59;
+}
+.user-heading {
+  font-size: 2rem;
+  color: #007aff;
+}
+
+.input-control {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  position: relative;
+}
+.input-control > input {
+  width: 350px;
+  padding: 0.3rem 1rem;
+  border: 1px solid #ededed;
+}
+.input-control .error {
+  font-size: 10px;
+  color: #ff0000;
+  position: absolute;
+  left: 33%;
+  bottom: -24px;
+}
+
+.user-profile {
+  margin-left: 2rem;
+}
+.user-profile-heading {
+  font-size: 2rem;
+  color: #007aff;
+}
+.user-profile-detail {
+  margin-top: 2rem;
+}
+.user-profile .read-only {
+  margin-left: 1rem;
+}

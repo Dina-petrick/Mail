@@ -1,0 +1,9 @@
+%scroll{
+    height: calc(100vh - 4.375rem);
+    overflow-y: scroll;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}

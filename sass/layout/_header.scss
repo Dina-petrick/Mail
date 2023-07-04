@@ -1,0 +1,41 @@
+@use "../abstracts/" as *; 
+
+header{
+    padding-block: 1rem 1.5rem;
+    .#{&}-container{
+        @include flex($justify-content: space-between);
+    }
+}
+
+.logo{
+    font-size: font-size("fs-600");
+    &-icon{
+        width: 15px;
+        height: 20px;
+        display: inline-block;
+        background-color: color("dark-color");
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        vertical-align: -2px;
+    }
+}
+
+.search-bar{
+    @include position(relative);
+    &-input{
+        height: 30px;
+        padding-left: 2rem;
+        padding-right: 1rem;
+        border-radius: 20px;
+        border: 0.4px solid color("gray-400");
+
+        &:focus{
+            outline: 1px solid color("gray-400");
+            outline-offset: 4px;
+        }
+    }
+    &-icon{
+        @include position(absolute, $top: 50%, $left:10px);
+        transform: translateY(-50%);
+    }
+}

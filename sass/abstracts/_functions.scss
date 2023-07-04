@@ -1,0 +1,19 @@
+@use "sass:map";
+@use "variables" as *;
+
+
+@function color($color){
+    @if map-has-key($colors, $color){
+        @return map-get($colors, $color);
+    }@else{
+        @error '$color does not have that color!!';
+    }
+}
+
+@function font-size($font-size){
+    @if map-has-key($font-sizes, $font-size){
+        @return map-get($font-sizes, $font-size);
+    }@else{
+        @error '$font-size does not have that font-size!!';
+    }
+}
