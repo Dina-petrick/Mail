@@ -15,3 +15,9 @@
 }
 
 
+@mixin text-ellipsis($width){
+    width: $width;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

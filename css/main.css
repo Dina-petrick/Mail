@@ -31,22 +31,6 @@ a {
   cursor: pointer;
 }
 
-button {
-  border: none;
-  cursor: pointer;
-  outline: none;
-  color: inherit;
-  background-color: transparent;
-}
-
-img {
-  max-width: 100%;
-}
-
-input {
-  background-color: none;
-}
-
 header {
   padding-block: 1rem 1.5rem;
 }
@@ -89,6 +73,40 @@ header .header-container {
   transform: translateY(-50%);
 }
 
+.mail-list-title, .mail-subject-title {
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: #4c4f59;
+}
+
+.mail-list-desc, .mail-subject-desc {
+  font-size: 0.75rem;
+  font-weight: 300;
+  margin-top: 0.7rem;
+}
+
+.mail-list {
+  height: calc(100vh - 4.375rem);
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+.mail-list::-webkit-scrollbar {
+  display: none;
+}
+
+.user-setting-btn, .btn {
+  width: 200px;
+  border: none;
+  padding: 0.4rem 1rem;
+  background-color: #007aff;
+  color: #ffffff;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+.user-setting-btn:active, .btn:active {
+  transform: scale(0.98);
+}
+
 aside {
   flex-basis: 20%;
   height: calc(100vh - 4.375rem);
@@ -101,6 +119,7 @@ aside {
 }
 .side-nav-item {
   padding: 0.4rem 1rem;
+  cursor: pointer;
 }
 .side-nav-item:hover {
   background-color: rgba(142, 142, 147, 0.1882352941);
@@ -134,49 +153,28 @@ aside {
   border-color: #6f6e74;
 }
 
-.btn-icon-wrap {
+.side-btn-wrap {
   width: 100%;
-  height: 50px;
   position: absolute;
   bottom: 0;
   left: 0;
   background-color: #f9f9f9;
   display: flex;
-  justify-content: space-evenly;
+}
+
+.side-btn-icon {
+  width: 50%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
-
-.btn {
-  width: 200px;
-  border: none;
-  padding: 0.4rem 1rem;
+.side-btn-icon:first-child {
+  border-right: 2px solid #ededed;
+}
+.side-btn-icon:hover {
   background-color: #007aff;
-  color: white;
-  letter-spacing: 1px;
-}
-.btn:hover {
-  transform: scale(0.98);
-}
-
-.mail-list-title, .mail-subject-title {
-  font-size: 1.125rem;
-  font-weight: 400;
-  color: #4c4f59;
-}
-
-.mail-list-desc, .mail-subject-desc {
-  font-size: 0.75rem;
-  font-weight: 300;
-  margin-top: 0.7rem;
-}
-
-.mail-list, .mail-view {
-  height: calc(100vh - 4.375rem);
-  overflow-y: scroll;
-  scrollbar-width: none;
-}
-.mail-list::-webkit-scrollbar, .mail-view::-webkit-scrollbar {
-  display: none;
+  color: #ffffff;
 }
 
 body {
@@ -219,15 +217,33 @@ body {
 .mail-list-item:hover {
   background-color: rgba(142, 142, 147, 0.0509803922);
 }
+.mail-list-item.active {
+  background-color: rgba(142, 142, 147, 0.0509803922);
+  border-left-color: #007aff;
+}
+.mail-list-share-icon:hover {
+  color: #007aff;
+}
+.mail-list-share-icon:active {
+  transform: scale(1.1);
+}
 .mail-list-info {
   display: flex;
   align-items: flex-end;
   flex-direction: column;
   gap: 1rem;
 }
-.mail-list-item.active {
-  background-color: rgba(142, 142, 147, 0.0509803922);
-  border-left-color: #007aff;
+.mail-list-title {
+  width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.mail-list-desc {
+  width: 140px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .mail-view {
@@ -240,6 +256,17 @@ body {
   padding-bottom: 2.5rem;
   border-bottom: 1px solid #ededed;
 }
+.mail-subject-title {
+  width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.mail-subject-desc {
+  position: relative;
+  display: flex;
+}
+
 .user-img {
   width: 60px;
   height: 60px;
@@ -248,14 +275,31 @@ body {
 }
 
 .user-name {
+  width: 100px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   border: 1px solid #ededed;
+  margin-left: 10px;
   border-radius: 10px;
-  padding-inline: 0.6rem;
+  padding-inline: 0.6rem 1.5rem;
   cursor: pointer;
 }
 .user-name-icon {
-  margin-left: 4px;
-  vertical-align: -1px;
+  position: absolute;
+  top: 50%;
+  left: 60%;
+  transform: translateY(-50%);
+}
+
+.main-view-data {
+  height: calc(100vh - 10.688rem);
+  overflow-y: scroll;
+  padding-bottom: 2rem;
+  scrollbar-width: none;
+}
+.main-view-data::-webkit-scrollbar {
+  display: none;
 }
 
 .mail-content {
@@ -291,18 +335,14 @@ body {
   margin-left: 2rem;
 }
 .user-setting-btn {
-  margin-top: 2rem;
-  padding: 0.3rem 2rem;
-  background-color: #007aff;
+  margin-top: 3rem;
   border-radius: 4px;
-  letter-spacing: 1px;
-  color: #ffffff;
-}
-.user-setting-btn:active {
-  transform: scale(0.96);
 }
 .user-profile {
   width: 460px;
+}
+.user-profile-detail {
+  display: flex;
 }
 .user-info {
   color: #4c4f59;
@@ -327,8 +367,8 @@ body {
   font-size: 10px;
   color: #ff0000;
   position: absolute;
-  left: 33%;
   bottom: -24px;
+  left: 33%;
 }
 
 .user-profile {

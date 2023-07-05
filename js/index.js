@@ -1,10 +1,9 @@
 const mailList = document.getElementById("mail-list");
 const mailView = document.getElementById("mail-view");
 const sideNavItems = document.querySelectorAll(".side-nav-item");
-const setting = document.querySelector(".setting");
 const sideNavContainer = document.querySelector(".sideNav-container");
+const setting = document.querySelector(".setting");
 const profile = document.querySelector(".profile");
-const user = document.querySelector(".user");
 const userSetting = document.querySelector(".user-setting");
 const userProfile = document.querySelector(".user-profile");
 
@@ -19,17 +18,17 @@ function showMailList(data) {
         <p class="mail-list-desc">${mail.subTitle}</p>
       </div>
       <div class="mail-list-info">
-        <small>${mail.time}</small>
-        <span><i class="fa-sharp fa-solid fa-reply"></i></span>
+        <span>${mail.time}</span>
+        <i class="fa-sharp fa-solid fa-reply mail-list-share-icon"></i>
       </div>
     `;
 
     listItem.setAttribute("data-index", index);
 
 
-    listItem.addEventListener("click", ()=>{
+    listItem.addEventListener("click", () => {
       const activeItem = document.querySelector(".mail-list-item.active");
-      if(activeItem) activeItem.classList.remove("active");
+      if (activeItem) activeItem.classList.remove("active");
 
       listItem.classList.add("active");
 
@@ -47,32 +46,33 @@ function showMailList(data) {
   });
 }
 
-function mailViewContent(mail){
+function mailViewContent(mail) {
 
   let paragraphs = [];
-  for (let i = 0; i < 3; i++) {
-  paragraph = mail.content[i];
-  paragraphs.push(`<p class="mail-content">${paragraph}</p>`);
+
+  for (let i = 0; i < mail.content.length; i++) {
+    paragraph = mail.content[i];
+    paragraphs.push(`<p class="mail-content">${paragraph}</p>`);
   }
   let contentArray = [paragraphs.join('')];
-  
+
   mailView.innerHTML = `
     <div class="mail-subject">
       <img src="${mail.img}" alt="user" class="user-img">
       <div class="mail-subject-info">
         <h3 class="mail-subject-title">${mail.title}</h3>
-        <p class="mail-subject-desc">From: <span class="user-name">${mail.user} <i class="fa-solid fa-angle-down user-name-icon"></i></span></p>
+        <p class="mail-subject-desc">From: <span class="user-name">${mail.user}</span> <i class="fa-solid fa-angle-down user-name-icon"></i></p>
       </div>
-      <div class="mail-view-icon">
-        <span><i class="fa-regular fa-star side-nav-icon"></i></span>
-        <span><i class="fa-solid fa-notes-medical side-nav-icon"></i></span>
-        <span><i class="fa-solid fa-trash side-nav-icon"></i></span>
-        <span><i class="fa-sharp fa-solid fa-reply"></i></span>
-      </div>
+      <ul class="mail-view-icon">
+        <li><i class="fa-regular fa-star side-nav-icon"></i></li>
+        <li><i class="fa-solid fa-notes-medical side-nav-icon"></i></li>
+        <li><i class="fa-solid fa-trash side-nav-icon"></i></li>
+        <li><i class="fa-sharp fa-solid fa-reply"></i></li>
+      </ul>
     </div>
-    <div class="mail-content">
-      <p>Hello ${userName},<p>
-      ${contentArray}
+    <div class="main-view-data"> 
+        <p>Hello ${userName},</p>
+        ${contentArray}
     </div>
   `;
 }
@@ -85,38 +85,38 @@ function clearAllMail() {
 }
 
 sideNavItems.forEach((item, index) => {
-  item.addEventListener("click", ()=> {
+  item.addEventListener("click", () => {
     const activeNav = document.querySelector(".side-nav-item.active");
-    if(activeNav) activeNav.classList.remove("active");
+    if (activeNav) activeNav.classList.remove("active");
 
     item.classList.add("active");
 
     clearAllMail();
-    if(index === 0) showMailList(mailDataList);
-    if(index === 1) showMailList(sendDataList);
+    if (index === 0) showMailList(mailDataList);
+    if (index === 1) showMailList(sendDataList);
   });
 });
 
 
-setting.addEventListener("click", ()=> {
+setting.addEventListener("click", () => {
   const activeNav = document.querySelector(".side-nav-item.active");
-  if(activeNav) activeNav.classList.remove("active");
+  if (activeNav) activeNav.classList.remove("active");
   sideNavContainer.classList.add("hidden");
   userProfile.classList.add("hidden");
   userSetting.classList.remove("hidden");
 })
 
 sideNavItems.forEach(e => {
-  e.addEventListener("click", ()=> {
+  e.addEventListener("click", () => {
     sideNavContainer.classList.remove("hidden");
     userProfile.classList.add("hidden");
     userSetting.classList.add("hidden");
   });
 })
 
-profile.addEventListener("click", ()=> {
+profile.addEventListener("click", () => {
   const activeNav = document.querySelector(".side-nav-item.active");
-  if(activeNav) activeNav.classList.remove("active");
+  if (activeNav) activeNav.classList.remove("active");
   sideNavContainer.classList.add("hidden");
   userProfile.classList.remove("hidden");
   userSetting.classList.add("hidden");
@@ -124,15 +124,15 @@ profile.addEventListener("click", ()=> {
 
 
 // Regular expressions for validation
-String.prototype.isValidUsername = function(){
-  return !!this.match(/^(?![\d\s]+$)[A-Za-z\s]{6,}$/);
+String.prototype.isValidUsername = function () {
+  return !!this.match(/^(?![\d\s]+$)[A-Za-z\s!@#$%^&*()\-=_+{}[\]:;"'<>,.?/\\|~`]{6,}$/);
 }
 
-String.prototype.isEmail = function(){
+String.prototype.isEmail = function () {
   return !!this.match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
 }
 
-String.prototype.isValidPassword = function(){
+String.prototype.isValidPassword = function () {
   return !!this.match(/^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()])[A-Za-z\d!@#$%^&*()]{8,}$/);
 }
 
@@ -155,15 +155,14 @@ function handleSubmit(e) {
   const validPassword = password.isValidPassword();
 
 
-  errorName.textContent = validName ? "" : "Name should have at least 6 characters and no numbers";
+  errorName.textContent = validName ? "" : "Name should have at least 6 characters, no numbers";
   errorEmail.textContent = validEmail ? "" : "Please enter a valid email address";
   errorPassword.textContent = validPassword ? "" : "Password should have at least 8 characters, 1 capital letter, and 1 symbol";
 
-    if (validName && validEmail && validPassword) {
+  if (validName && validEmail && validPassword) {
     viewName.textContent = name;
     viewEmail.textContent = email;
-    }
-    
+  }
 }
 
 const submitBtn = document.querySelector(".user-setting-btn");

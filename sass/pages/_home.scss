@@ -15,12 +15,12 @@ body{
 }
 
 .main-container{
-    display: flex;
+    @include flex;
 }
 
 .sideNav-container{
     flex-basis: 80%;
-    display: flex;
+    @include flex;
 }
 
 .hidden{
@@ -42,6 +42,21 @@ body{
         &:hover{
             background-color: color("gray-100");
         }
+
+        &.active{
+            background-color: color("gray-100");
+            border-left-color: color("blue-color");
+        }
+    }
+
+    &-share-icon{
+        &:hover{
+            color: color("blue-color");
+        }
+
+        &:active{
+            transform: scale(1.1);
+        }
     }
 
     &-info{
@@ -51,35 +66,36 @@ body{
 
     &-title{
         @extend %title;
+        @include text-ellipsis($width: 200px);
     }
 
     &-desc{
-        @extend %sub-title ;
+        @extend %sub-title;
+        @include text-ellipsis($width: 140px);
     }
 }
 
-.mail-list-item.active{
-    background-color: color("gray-100");
-    border-left-color: color("blue-color");
-}
+
 
 // Mail View 
 
 .mail-view{
     flex-basis: 70%;
     padding: 1rem 2rem;
-    @extend %scroll;
 }
 
 .mail-subject{
-    display: flex;
+    @include flex;
     padding-bottom: 2.5rem;
     border-bottom: 1px solid #ededed;
     &-title{
         @extend %title;
+        @include text-ellipsis($width: 200px);
     }
 
     &-desc{
+        @include position(relative);
+        @include flex;
         @extend %sub-title;
     }
 }
@@ -92,14 +108,28 @@ body{
 }
 
 .user-name{
+    @include text-ellipsis($width: 100px);
     border: 1px solid color("border-shade");
+    margin-left: 10px;
     border-radius: 10px;
-    padding-inline: 0.6rem;
+    padding-inline: 0.6rem 1.5rem;
     cursor: pointer;
 
     &-icon{
-        margin-left: 4px;
-        vertical-align: -1px;
+        @include position(absolute, $top: 50%, $left: 60%);
+        transform: translateY(-50%);
+    }
+}
+
+
+.main-view-data{
+    height: calc(100vh - 10.688rem);
+    overflow-y: scroll;
+    padding-bottom: 2rem;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        display: none;
     }
 }
 
@@ -144,20 +174,18 @@ body{
         margin-left: 2rem;
 
         &-btn{
-            margin-top: 2rem;
-            padding: 0.3rem 2rem;
-            background-color: color("blue-color");
+            @extend %btn;
+            margin-top: 3rem;
             border-radius: 4px;
-            letter-spacing: 1px;
-            color: color("light-color");
-            &:active{
-                transform: scale(.96);
-            }
         }
     }
 
     &-profile{
         width: 460px;
+
+        &-detail{
+            @include flex;
+        }
     }
     
     &-info{
@@ -175,7 +203,7 @@ body{
 .input-control{
     @include flex($justify-content: space-between);
     margin-top: 2rem;
-    position: relative;
+    @include position(relative);
     & > input {
         width: 350px;
         padding: 0.3rem 1rem;
@@ -185,9 +213,7 @@ body{
     .error{
         font-size: 10px;
         color: #ff0000;
-        position: absolute;
-        left: 33%;
-        bottom: -24px;
+        @include position(absolute, $bottom: -24px, $left: 33%);
     }
 }
 

@@ -1,0 +1,14 @@
+@use "../abstracts/" as *;
+
+%btn{
+    width: 200px;
+    border: none;
+    padding: 0.4rem 1rem;
+    background-color: color("blue-color");
+    color: color("light-color");
+    letter-spacing: 1px;
+    cursor: pointer;
+    &:active{
+        transform: scale(.98);
+    }
+}

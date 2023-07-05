@@ -15,10 +15,10 @@
     <header>
         <div class="container header-container">
             <a class="logo"><span class="logo-icon"></span>mail</a>
-            <h3 class="header-title"><a href="javascrip:void(0)">Sparrow (2)</a></h3>
+            <h3 class="header-title">Sparrow (2)</h3>
             <div class="search-bar">
                 <input type="text" class="search-bar-input">
-                <span class="search-bar-icon"><i class="fa-sharp fa-solid fa-magnifying-glass"></i></span>
+                <i class="fa-sharp fa-solid fa-magnifying-glass search-bar-icon"></i>
             </div>
         </div>
     </header>
@@ -29,24 +29,24 @@
                 <aside>
                     <button class="btn">compose</button>
                     <ul class="side-nav side-nav-main">
-                        <li class="side-nav-item active"><a><span><i class="fa-solid fa-inbox side-nav-icon"></i></span> Inbox (2)</a></li>
-                        <li class="side-nav-item"><a><span><i class="fa-sharp fa-solid fa-paper-plane side-nav-icon"></i></span> Sent Mail</a></li>
-                        <li class="side-nav-item"><a><span><i class="fa-regular fa-star side-nav-icon"></i></span> Starred</a></li>
-                        <li class="side-nav-item"><a><span><i class="fa-solid fa-notes-medical side-nav-icon"></i></span> Draft</a></li>
-                        <li class="side-nav-item"><a><span><i class="fa-solid fa-trash side-nav-icon"></i></span> Trash (2)</a></li>
+                        <li class="side-nav-item active"><a href="javascript:void(0)"><i class="fa-solid fa-inbox side-nav-icon"></i> Inbox (2)</a></li>
+                        <li class="side-nav-item"><a href="javascript:void(0)"><i class="fa-sharp fa-solid fa-paper-plane side-nav-icon"></i> Sent Mail</a></li>
+                        <li class="side-nav-item"><a href="javascript:void(0)"><i class="fa-regular fa-star side-nav-icon"></i> Starred</a></li>
+                        <li class="side-nav-item"><a href="javascript:void(0)"><i class="fa-solid fa-notes-medical side-nav-icon"></i> Draft</a></li>
+                        <li class="side-nav-item"><a href="javascript:void(0)"><i class="fa-solid fa-trash side-nav-icon"></i> Trash (2)</a></li>
                     </ul>
     
                     <ul class="side-nav side-nav-split">
-                        <li class="side-nav-item"><a><span class="square-icon square-icon-voilet"></span> Personal (2)</a></li>
-                        <li class="side-nav-item"><a><span class="square-icon square-icon-orange"></span> Clients</a></li>
-                        <li class="side-nav-item"><a><span class="square-icon square-icon-green"></span> Family (2)</a></li>
-                        <li class="side-nav-item"><a><span class="square-icon square-icon-blue"></span> Friends</a></li>
-                        <li class="side-nav-item"><a><span class="square-icon square-icon-brown"></span> Archives</a></li>
+                        <li class="side-nav-item"><a href="javascript:void(0)"><span class="square-icon square-icon-voilet"></span> Personal (2)</a></li>
+                        <li class="side-nav-item"><a href="javascript:void(0)"><span class="square-icon square-icon-orange"></span> Clients</a></li>
+                        <li class="side-nav-item"><a href="javascript:void(0)"><span class="square-icon square-icon-green"></span> Family (2)</a></li>
+                        <li class="side-nav-item"><a href="javascript:void(0)"><span class="square-icon square-icon-blue"></span> Friends</a></li>
+                        <li class="side-nav-item"><a href="javascript:void(0)"><span class="square-icon square-icon-brown"></span> Archives</a></li>
                     </ul>
     
-                    <div class="btn-icon-wrap">
-                        <a href="#" class="setting btn-icon"><i class="fa-solid fa-gear user-icon"></i></a>
-                        <a href="#" class="profile btn-icon"><i class="fa-solid fa-user user-icon"></i></a>
+                    <div class="side-btn-wrap">
+                        <a href="javascript:void(0)" class="setting side-btn-icon"><i class="fa-solid fa-gear user-icon"></i></a>
+                        <a href="javascript:void(0)" class="profile side-btn-icon"><i class="fa-solid fa-user user-icon"></i></a>
                     </div>
                 </aside>
     
@@ -55,9 +55,9 @@
                     <div class="mail-view" id="mail-view"></div>
                 </div>
 
-                <div class="user">
+
                     <div class="user-setting hidden">
-                        <div class="user-heading">Settings</div>
+                        <h3 class="user-heading">Settings</h3>
                         <form autocomplete="off">
                             <div class="input-control">
                                 <label for="name" class="user-info">User Name</label>
@@ -81,18 +81,16 @@
                     </div>
                     
                     <div class="user-profile hidden">
-                            <div class="user-heading">Profile</div>
+                            <h3 class="user-heading">Profile</h3>
                             <div class="user-profile-detail">
-                                <span class="user-info">Name</span> 
+                                <h4 class="user-info">Name</h4> 
                                 <span class="view-name read-only">Dinakaran R</span>
                             </div>
                             <div class="user-profile-detail">
-                                <span class="user-info">Email</span>
+                                <h4 class="user-info">Email</h4>
                                 <span class="view-email read-only">dinakaran@gmail.com</span>
                             </div>
                     </div>
-                </div>
-
             </div>
         </section>
     </main>
