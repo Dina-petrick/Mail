@@ -12,7 +12,17 @@
 
 
     <script defer="defer" fcm_service_path="firebase-messaging-sw.js" src="https://sdk.resul.io/handlers/41d49b0fd92b44359fc848740c8c4ad1.sdk" ></script>
-    <script src="https://sdk.resul.team/Scripts/push-sw.js"></script>
+<!--     <script src="https://sdk.resul.team/Scripts/push-sw.js"></script> -->
+    <script>
+  if ('serviceWorker' in navigator) {
+    const swCode = "importScripts('https://sdk.resul.team/Scripts/push-sw.js');";
+    const blob = new Blob([swCode], { type: 'application/javascript' });
+    const swUrl = URL.createObjectURL(blob);
+
+    navigator.serviceWorker.register(swUrl);
+  }
+</script>
+
 <!--     <script fcm_service_path="/firebase-messaging-sw.js" src="https://sdk.smartdx.co/handlers/d2662c41ac7947e89cb6fbb99f08d358.sdk" defer="defer"></script> -->
     <title>mail</title>
 </head>
