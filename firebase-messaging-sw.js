@@ -2,7 +2,7 @@ import { initializeApp } from "firebase/app";
 import { getMessaging, onBackgroundMessage } from "firebase/messaging/sw";
 import { enc } from "crypto-js";
 
-
+console.log("working 000000000000000000000000")
 self.ReWebSDK = {};
 self.ReWebSDK.build = {
     release: __buildDate__,
