@@ -101,6 +101,8 @@ const gD = (v) => {
 }
 
 
+console.log("new Changes applied");
+
 const sD = (v) => {
     try {
         if (!!v && typeof v == 'string') {
