@@ -14,5 +14,8 @@
     "gulp-purgecss": "^5.0.0",
     "gulp-sass": "^5.1.0",
     "sass": "^1.63.6"
+  },
+  "dependencies": {
+    "firebase": "^11.10.0"
   }
 }
